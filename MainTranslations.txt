@@ -1,0 +1,552 @@
+# ===== XUnity Auto Translator 配置文件 =====
+# Spaceflight Simulator 中文翻译
+# 版本：v1.0
+# 最后更新：2026.2.7
+# 作者：DeltaWater https://space.bilibili.com/1563141153
+
+# ===== 核心变量和模式定义 =====
+{{A}}:={{A}}：
+{{A}} Offset={{A}} 偏移
+
+# ===== 正则表达式匹配 =====
+# 常见的版本信息匹配
+r:"^v(\d+\.\d+\.\d+\.\d+)$"=v$1
+r:"^v(\d+\.\d+\.\d+)$"=v$1
+r:"^v(\d+\.\d+)$"=v$1
+r:"^V(\d+\.\d+\.\d+\.\d+)$"=V$1
+r:"^V(\d+\.\d+\.\d+)$"=V$1
+r:"^V(\d+\.\d+)$"=V$1
+
+# 模组信息匹配
+r:"^v(\d+\.\d+\.\d+\.\d+) - [a-zA-Z]+\\n\((\d+) Mods Loaded\)$"=v$1 - 模组版\n（已加载 $2 个模组）
+
+# 进度显示匹配
+sr:"^(?<name>.+): (?<num>\d+/\d+)$"="${name}：${num}"
+sr:"^(?<name>.+)\s+(?<num>\d+/\d+)$"="${name} ${num}"
+r:"^([\w\s]+): (\d+)/(\d+)$"=$1：$2/$3
+
+# 世界状态显示 很遗憾-不可用
+# r:"^Mode: (\w+)\nDifficulty: (\w+)<size\=25>\n\n</size>Last played: (.+?) ago\r\nPlaytime: (.+?)$"=模式：$1\n难度：$2<size=25>\n\n</size>最后游玩：$3前\n总共游玩：$4
+# Mode: Sandbox\nDifficulty: Normal<size\=25>\n\n</size>Last played: 1d 14h 13m ago\r\nPlaytime: 0.6h=模式：沙盒 难度：普通<size\=25>\n\n</size>最后播放时间：1d 14h 13m 前 播放时间：0.6h
+
+# 数值和单位匹配
+r:"^(\d+\.?\d*)x$"=$1x
+r:"^(\d+\.?\d*)\s*m/s$"=$1米/秒
+r:"^(\d+\.?\d*)\s*km/s$"=$1千米
+r:"^(\d+\.?\d*)m$"=$1米
+r:"^\s*(\d+\.?\d*)\s*t$"= $1吨
+r:"^\s*(\d+\.?\d*)\s*kN$"= $1千牛
+r:"^\s*(\d+\.?\d*)\s*°C$"= $1°C
+r:"^\s*(\d+\.?\d*)\s*Isp$"= $1比冲
+
+# ===== 游戏基础界面 =====
+Main Menu=主菜单
+Settings=设置
+Exit=退出
+Play=开始游戏
+Help=帮助
+Cancel=取消
+Close=关闭
+Save=保存
+Load=加载
+New=新建
+Delete=删除
+Rename=重命名
+Import=导入
+Export=导出
+Config=配置
+
+# ===== 显示和单位 =====
+Display=显示
+Units=单位
+Misc=其他
+VU=视听者
+Resolution=分辨率
+FPS=帧率
+Vertical Sync=垂直同步
+Anti Aliasing=抗锯齿
+Windowed=窗口化
+Fullscreen=全屏
+Window mode=窗口模式
+
+# ===== 音效和音乐 =====
+Music=音乐
+Sound=音效
+Audio Settings=音频设置
+
+# ===== 社交和社区 =====
+Youtube=YouTube
+Discord=Discord
+Reddit=Reddit
+Get Full Version=获取完整版
+
+# ===== 世界管理 =====
+Create New World=创建新世界
+Create World=创造世界
+Select world's solar system=选择世界星系
+Rename=重命名
+Delete=删除
+Scale: 1:20\nSpecific Impulse: 1x\nTank Dry Mass: 1x\nEngine Mass: 1x=比例：1:20\n比冲：1x\n储箱干重：1x\n发动机质量：1x
+Scale: 1:1\nSpecific Impulse: 1.5x\nTank Dry Mass: 0.25x\nEngine Mass: 0.5x=比例：1:1\n比冲：1.5x\n储箱干重：0.25x\n发动机质量：0.5x
+Scale: 1:10\nSpecific Impulse: 1x\nTank Dry Mass: 1x\nEngine Mass: 1x=比例：1:10\n比冲：1x\n储箱干重：1x\n发动机质量：1x
+
+# ===== 加载状态 =====
+Loading...=加载中...
+Loading<color=#00000000>...</color>=加载中<color=#00000000>...</color>
+
+# ===== 游戏主界面 =====
+Build New Rocket=建造新火箭
+Resume Game=继续游戏
+Exit To Main Menu=退出到主菜单
+Exit To Space Center=退出到航天中心
+Share Blueprint=分享蓝图
+Video Tutorials=视频教程
+Example Rockets=示例火箭
+No Collision Damage=无碰撞损坏
+No Gravity=无重力
+No Burn Marks=无烧痕
+Infinite Build Area=无限构建面积
+Part Clipping=零件剪裁
+No Heat Damage=无热损伤
+No Atmospheric Drag=无大气阻力
+Infinite Fuel=无限燃料
+
+# ===== 建造界面 =====
+Clear=清空
+Move Rocket=移动火箭
+Load Blueprint=加载蓝图
+Save Blueprint=保存蓝图
+Launch=发射
+Share=分享
+Height=高度
+width=宽度
+Parts=部件
+{{A}} Tutorial={{A}}教程
+Orbit Tutorial=轨道教程
+Docking Tutorial=对接教程
+{{A}} Lander={{A}}着陆器
+Launch Anyway=仍然发射
+
+# ===== 蓝图管理 =====
+Blueprints=蓝图
+Download Blueprint=下载蓝图
+Upload Blueprint=上传蓝图
+
+# ===== 建造设置 =====
+Build Settings=建造设置
+Snap to Parts=对齐部件
+Part Adaptation=部件适配
+Invert Rotate Keybinds=反转旋转按键
+Grid Snap=网格吸附
+Rotation Degrees=旋转度数
+Defaults=默认
+Reset=重置
+Select a part=选择一个部件
+Snapping=对齐
+Adapting=适配
+
+# ===== 界面元素 =====
+Button Text=按钮文字
+Label=标签
+Symmetry On=对称：开
+Symmetry Off=对称：关
+Interior View On=内部视图：开
+Interior View Off=内部视图：关
+
+# ===== 部件编辑器 =====
+Part Editor=部件编辑器
+Other=其他
+Structural=结构
+Fairings=整流罩
+Aerodynamics=空气动力学
+Engines=发动机
+Basics=基础
+
+# ===== 部件尺寸 =====
+12 Wide=12格宽
+10 Wide=10格宽
+8 Wide=8格宽
+6 Wide=6格宽
+
+# ===== 示例火箭 =====
+Moon Lander=月球着陆器
+Three Stage Rocket=三级火箭
+Two Stage Rocket=两级火箭
+Basic Rocket=基础火箭
+
+# ===== 部件名称 =====
+# 控制类
+Capsule=指令舱
+Probe=探测器
+Docking Port=对接口
+
+# 推进类
+Fuel Tank=燃料箱
+Aerodynamic Nose Cone=气动鼻锥
+Aerodynamic Fuselage=气动机身
+Fairing=整流罩
+
+# 发动机类
+Titan Engine=泰坦发动机
+Valiant Engine=勇者发动机
+Frontier Engine=前沿发动机
+Kolibri Engine=蜂鸟发动机
+Ion Engine=离子发动机
+RCS Thruster=RCS推进器
+Hawk Engine=猎鹰发动机
+A-7 Engine=A-7发动机
+LR-89-5 Engine=LR-89-5发动机
+LR-105-5 Engine=LR-105-5发动机
+
+# 结构类
+Structural Part=结构部件
+Fuselage=机身
+Adapter=转接器
+Separator=分离器
+Stage Separator=级间分离器
+Engine Base=发动机基座
+
+# 功能类
+Parachute=降落伞
+Heat Shield=隔热罩
+Landing Leg=着陆腿
+Rover Wheel=漫游车轮
+Solar Panel=太阳能板
+Launch Escape System=发射逃逸系统
+Retro Pack=制动包
+
+# 特殊类
+Redstone Atlas=红石阿特拉斯
+
+# ===== 部件描述 =====
+A small capsule, carrying one astronaut=一个小型指令舱，载有一名宇航员
+An aerodynamic nose cone, used to improve the aerodynamics of side boosters=一个气动鼻锥，用于改善侧面助推器的空气动力性能
+A fuel tank carrying liquid fuel and liquid oxygen=一个装载液体燃料和液氧的燃料箱
+A heat resistant shield used to survive atmospheric reentry=一个耐热护盾，用于在大气再入时存活
+Vertical separator, used to detach empty stages=垂直分离器，用于分离空的级段
+A high thrust - lower efficiency engine, normally used in the first stage of a rocket=一个高推力、低效率的发动机，通常用于火箭的第一级
+High efficiency, low thrust. Used in space when high thrust isn't a priority=高效率、低推力。在太空中当高推力不是优先考虑时使用
+A tiny engine used for landers=一个用于着陆器的小型发动机
+A set of small directional thrusters, used for docking=一套小型定向推进器，用于对接
+A low thrust engine with an incredibly high efficiency=一个具有极高效率的低推力发动机
+An aerodynamic fuselage, used to cover engines=一个气动机身，用于覆盖发动机
+A parachute used for landing=一个用于着陆的降落伞
+An aerodynamic fairing, used to encapsulate payloads=一个气动整流罩，用于封装有效载荷
+A light and strong structural part=一个轻巧而坚固的结构部件
+An extendable and retractable leg used for landing on the surface of moons and planets=一条可伸缩的腿，用于在卫星和行星表面着陆
+A docking port which can be used to connect two vehicles together=一个对接口，可用于连接两个航天器
+An unmanned probe, used for one way missions=一个无人探测器，用于单程任务
+Rover wheel used to drive on the surface of planets=漫游车轮，用于在行星表面行驶
+A solar panel that generates power when extended=一个在展开时发电的太阳能板
+
+# ===== 资源和参数 =====
+Solid fuel=固体燃料
+Liquid fuel=液体燃料
+Efficiency=效率
+Separation force=分离力
+Heat tolerance=耐热性
+Max deploy height=最大展开高度
+Burn Time=燃烧时间
+Torque=扭矩
+Thrust / Weight=推力/重量
+Mass=质量
+Thrust=推力
+Resource name=资源名称
+
+# ===== 游戏内控制 =====
+RCS=RCS
+Switch To=切换到
+Throttle=油门
+IGNITION=点火
+End Mission=结束任务
+Navigate To=导航至
+Focus=聚焦
+Track=跟踪
+Recover=回收
+Destroy=摧毁
+Clear Debris=清除残骸
+Timewarp Here=时间加速至此
+Rocket=火箭
+Map=地图
+Velocity=速度
+Part Count=部件数量
+Mission Log=任务日志
+Continue=继续
+Space Center=太空中心
+Parachute half deployed=降落伞展开一半
+Cannot timewarp faster than 3x while below 30km=30 公里以下时时间扭曲速度不能超过 3 倍
+sr:"^Time acceleration (?<val>\d+(\.\d+)?)x$"="时间加速 ${val}x"
+Engine On=发动机开启
+Reached 1000m altitude=到达海拔1000m
+Reached 5km altitude=达到5公里高度
+Reached 10km altitude=达到10公里高度
+Reached 15km altitude=达到15公里高度
+Out of {{A}}=离开{{A}}
+Cannot timewarp faster than 3x while below 25km=25 公里以下时时间扭曲速度不能超过 3 倍
+No control=无法控制
+Reached low {{A}} orbit=到达低 {{A}} 轨道
+Reached high {{A}} orbit=到达高 {{A}} 轨道
+Cannot turn while timewarping=时间加速时无法转动
+Docked on the surface of the {{A}}=在{{A}}表面对接
+Rover wheel On=车轮开启
+Rover wheel Off=车轮关闭
+
+# ===== 部件名称模式 =====
+Part name 0c=部件名称 0c
+
+# ===== 高度显示 =====
+Height (Terrain)=高度（地表）
+
+# ===== 回退菜单 =====
+Revert 3 Min=回退3分钟
+Revert 30 Sec=回退30秒
+Revert To Build=回退到建造
+Revert To Launch=回退到发射
+Load Quicksave=加载快速存档
+Create Quicksave=创建快速存档
+WARNING:\nThis will undo all progress since last launch=警告：\n这将撤销自上次发射以来的所有进度
+Landed on the surface of the Earth=降落在地球表面
+
+# ===== 高级轨道信息 =====
+Advanced Info=高级信息
+Angle=角度
+Target=目标
+Surface=地表
+ANAIS Panel=ANAIS面板
+Transfer mode=转移模式
+Show transfer=显示转移
+Target altitude=目标高度
+Preferred node=首选节点
+ΔV=ΔV
+World Time=世界时间
+World Clock=世界时钟
+Timewarp Span=时间加速跨度
+Help for big noobs=新手帮助
+Show tips=显示提示
+Any=任意
+Approach lines=接近线
+Km=千米
+Rendez-vous=交会
+Toggle transfer mode=切换转移模式
+Choose node=选择节点
+Fly-by=飞越
+Apoapsis=远拱点
+Periapsis=近拱点
+Eccentricity=偏心率
+Local Angle=局部角度
+Prograde=顺行
+Nb. max turns=最大圈数
+Entered {{A}}'s upper atmosphere=进入{{A}}的高层大气
+Entered {{A}}'s lower atmosphere=进入{{A}}的低层大气
+
+# ===== 快捷键系统 =====
+Keybindings=按键绑定
+Ctrl + C=Ctrl + C
+Copy/Paste=复制/粘贴
+Ctrl + A=Ctrl + A
+Select all=全选
+F9=F9
+F5=F5
+Save/Load=保存/加载
+Ctrl + V=Ctrl + V
+Duplicate=复制
+Ctrl + D=Ctrl + D
+Rotate part=旋转部件
+Q=Q
+E=E
+Flip part=翻转部件
+W=W
+A=A
+S=S
+D=D
+Undo=撤销
+Ctrl + Z=Ctrl+Z
+Redo=重做
+Ctrl + Y=Ctrl + Y
+Toggle ignition=切换点火
+Space=空格
+Adjust throttle=调整油门
+Ctrl=Ctrl
+Shift=Shift
+Min/Max throttle=最小/最大油门
+X=X
+Z=Z
+Turn rocket=转动火箭
+Toggle RCS=切换RCS
+R=R
+Move using RCS=使用RCS移动
+Activate stage=激活级段
+Enter=回车
+Toggle map=切换地图
+M=M
+Timewarp=时间加速
+Switch rocket=切换火箭
+Toggle console=切换控制台
+F1=F1
+Smart SAS=智能SAS
+Toggle prograde=切换顺行
+None=无
+Toggle target=切换目标
+Toggle surface=切换地表
+Toggle none=切换无
+Set retrograde=设置逆行
+Set default=设置默认
+Change offset by ±10=偏移量±10
+Change offset by ±1=偏移量±1
+Reset/Flip offset=重置/翻转偏移
+
+# ===== VanillaUpgrades 快捷键 =====
+VanillaUpgrades Keybindings=VanillaUpgrades 按键绑定
+Hide UI=隐藏用户界面
+F2=F2
+Toggle Windowed {{A}}=切换窗口化{{A}}
+F11=F11
+Build=建造
+Toggle symmetry mode=切换对称模式
+Toggle interior view=切换内部视图
+Open Pick Categories=打开部件分类
+Tab=Tab
+L=L
+World=世界
+Stop Timewarp=停止时间加速
+Slash=斜杠
+Throttle To 0.1%=油门设为0.1%
+C=C
+Hover mode=悬停模式
+V=V
+Toggle torque=切换扭矩
+T=T
+Build Settings Keybindings=建造设置按键绑定
+Custom Rotation=自定义旋转
+Ctrl + Q=Ctrl + Q
+Ctrl + E=Ctrl + E
+Move Selected Parts=移动选定部件
+Down=向下
+Up=向上
+Left=左
+Right=右
+Change Selected Part Widths=更改选定部件宽度
+Ctrl + Left=Ctrl + 左键
+Ctrl + Right=Ctrl + 右键
+Change Selected Part Heights=更改选定部件高度
+Ctrl + Down=Ctrl + 下键
+Ctrl + Up=Ctrl + 上键
+Small Increment Modifier=小增量调整键
+Orientation {{A}}=方向{{A}}
+LeftAlt=左Alt
+Change Small Move/Resize Increment=更改小移动/调整增量
+Toggle Infinite Build Area=切换无限建造区域
+I=I
+Toggle Part Clipping=切换部件穿透
+O=O
+Window Scale=窗口缩放
+Show Advanced Info=显示高级信息
+Separate Advanced Info Window=独立高级信息窗口
+Horizontal {{A}}=水平{{A}}
+Show Clock While Timewarping=时间加速时显示时钟
+Show {{A}} in Clock=在时钟中显示{{A}}
+Always Show {{A}}=始终显示{{A}}
+Explosion Effects=爆炸效果
+Darken Debris Map Icons=调暗碎片地图图标
+More Precise Percentages=更精确的百分比
+Hide Top Left Button Text In World=隐藏游戏中左上角按钮文字
+Kilotonnes (kt)=千吨(kt)
+% Speed of Light (c)=%光速(c)
+Kilometers/Second (km/s)=千米/秒(km/s)
+Lightyears (ly)=光年(ly)
+Gigameters (Gm)=吉米(Gm)
+Megameters (Mm)=兆米(Mm)
+Higher Physics Timewarps=更高级物理时间加速
+Allow Time Slowdown=允许时间减速
+More Camera Movement=更多镜头移动
+More Camera Zoom=更多镜头缩放
+Stop Timewarp On Encounter=遭遇时停止时间加速
+Pause Game When Focus is Lost=失去焦点时暂停游戏
+Skip Build New Rocket Prompt=跳过新建火箭提示
+Allowed Autosaves=允许的自动保存
+10 Min=10分钟
+Autosave Timer=自动保存计时器
+Miscellaneous=杂项
+Orientation Key is Toggle=方向键为切换模式
+Modifier Key is Toggle=修饰键为切换模式
+Unhide All Hidden Skins=取消隐藏所有隐藏皮肤
+Degrees Change Step=角度变化步长
+Numbers Change Step=数字变化步长
+Editing Settings=编辑设置
+Stretch Window In Height=拉伸窗口高度
+Window Height=窗口高度
+Window Width=窗口宽度
+GUI Settings=GUI设置
+
+# ===== 游戏设置 =====
+Video Settings=视频设置
+Conic Sections=圆锥截面
+Camera Shake=镜头晃动
+Window mode=窗口模式
+Reset To Default=重置为默认
+Opacity UI=界面不透明度
+Scale UI=界面缩放
+1920x1200=1920x1200
+Unlimited=无限
+On=开
+FXAA=FXAA
+
+# ===== 模组相关 =====
+Mod Loader=模组加载器
+Mods Settings=模组设置
+String Variables=字符串变量
+fuel_percent=燃料百分比
+height=高度
+width_b=宽度_b
+width_a=宽度_a
+width_original=原始宽度
+Double Variables=双精度变量
+Orientation=朝向
+Y=Y轴
+Position=位置
+shape_tex=形状纹理
+color_tex=颜色纹理
+ΔV calculator=ΔV计算器
+Vanilla Upgrades=原版增强
+StarMods=Star模组
+UI Tools=UI工具
+Map Marker Color Change=地图标记颜色更改
+Download Mods=下载模组
+Open Mods Folder=打开模组文件夹
+Mod=模组
+Translation=翻译
+
+# ===== 具体模组信息 =====
+ANAIS=ANAIS
+Advanced NAvigation Innovative System\nReplaces the original navigation system with a more elaborated one.=先进的导航创新系统\n用更复杂的系统替换原有导航系统。
+Altaïr=Altaïr（牵牛星）
+Build settings window and various changes to build mode. See the GitHub repository for a full list of features.=建造设置窗口及建造模式的各种改动。\n完整功能列表请查看GitHub仓库。
+This mod adds your current ΔV to the flight information interface.=此模组将当前ΔV添加到飞行信息界面。
+Edit all part stats!=编辑所有部件属性！
+CucumberSpace=CucumberSpace
+NeptuneSky=海王星天空
+Upgrades the vanilla experience with quality-of-life features and keybinds. See the GitHub repository for a list of features. Credits can be found in the wiki.=通过便利功能和按键绑定增强原版体验。\n完整功能列表请查看GitHub仓库。\n制作人员信息可在wiki中找到。
+SFSGamer=SFSGamer
+Manually modify the settings file to use a custom language.=手动修改设置文件以使用自定义语言。
+pixelgaming579=pixelgaming579
+Adds a variety of control options for the stability assist system (SAS).=为稳定辅助系统(SAS)添加多种控制选项。
+Mod that provides advanced UI functionality and used by other mods as dependency=提供高级UI功能并被其他模组作为依赖项使用的模组Filsta=Filsta
+Mod allowing you to change your Marker color within the map!=允许您更改地图内标记颜色的模组！
+
+# ===== 制作人员信息 =====
+Credits=制作人员
+<Size=70> Štefo Mai Morojna </size>\n<Size=55> Designer - Programmer - Artist </size>\n\n<Size=70> Jordi van der Molen </size>\n<Size=55> Programmer </size>\n\n<Size=70> Chris Christo </size>\n<Size=55> Programmer </size>\n\n<Size=70> Josh </size>\n<Size=55> Programmer </size>\n\n<Size=70> Aidan Ginise </size>\n<Size=55> Programmer </size>\n\n<Size=70> Andrey Onischenko </size>\n<Size=55> Programmer </size>\n\n<Size=70> Davi Vasc </size>\n<Size=55> Composer </size>\n\n<Size=70> Ashton Mills </size>\n<size=55> Composer </size>=<Size=70> 斯特福·迈·莫罗伊纳 </size>\n<Size=55> 设计 - 程序 - 美术 </size>\n\n<Size=70> 乔迪·范德莫伦 </size>\n<Size=55> 程序员 </size>\n\n<Size=70> 克里斯·克里斯托 </size>\n<Size=55> 程序员 </size>\n\n<Size=70> 乔希 </size>\n<Size=55> 程序员 </size>\n\n<Size=70> 艾丹·吉尼斯 </size>\n<Size=55> 程序员 </size>\n\n<Size=70> 安德烈·奥尼申科 </size>\n<Size=55> 程序员 </size>\n\n<Size=70> 戴维·瓦斯克 </size>\n<Size=55> 作曲 </size>\n\n<Size=70> 阿什顿·米尔斯 </size>\n<size=55> 作曲 </size>
+
+# ===== 其他杂项 =====
+Hello World=你好，世界
+Close game?=关闭游戏？
+- Part Name -=- 部件名称 -
+Part name 0c=部件名称 0c
+<size\=25>\n\n</size>=<size\=25>\n\n</size>
+<color\=#ffffff30>Hard</color>=<color\=#ffffff30>困难</color>
+<color\=#ffffff30>Extreme</color>=<color\=#ffffff30>极难</color>
+Loading<color\=#00000000>...</color>=加载中<color\=#00000000>...</color>
+
+# ===== SFS隐藏的测试内容 =====
+Text text text text text Text text text text text Text text text text text=无意义的内容
+erhegrergergeergerg\nergergergerg\nergergerg=无意义的内容
